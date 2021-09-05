@@ -4,7 +4,7 @@
     "module": "commonjs",
     "target": "ES2020",
     "jsx": "react",
-    "allowJs": true,
+    "allowJs": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
