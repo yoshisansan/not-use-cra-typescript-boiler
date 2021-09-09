@@ -8,6 +8,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "rootDirs": ["."],
+    "baseUrl": "./src",
+    "paths": {
+      "components*": ["src/components*"],
+    },
     "outDir": "./dist",
     "lib": [
       "ES2020",

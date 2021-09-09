@@ -1,5 +1,6 @@
 import * as path from 'path'
 import HtmlWebPackPlugin from 'html-webpack-plugin';
+// import TsconfigPathsPlugin from 'tsconfig-paths';
 import { Configuration as WebpackConfiguration } from "webpack"
 import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server"
 
@@ -16,13 +17,21 @@ const config: Configuration = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
+        use: {
+          loader: "ts-loader",
+          options: {
+            configFile: path.resolve(__dirname, 'tsconfig.json'),
+          },
+        },
         exclude: /node_modules/,
       },
     ],
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".jsx"],
+    alias: {
+      "components*": path.resolve(__dirname, "src/components*"),
+    },
   },
   devServer: {
     static: {
